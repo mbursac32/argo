@@ -4,9 +4,9 @@ metadata:
   name: my-awesome-app-1
 spec:
   destination:
-    namespace: app1
+    namespace: default
     name: in-cluster
-  project: marko-example
+  project: default
   source:
     path: overlays/my-awesome-app-1/dev
     repoURL: https://github.com/mbursac32/argo-apps.git
