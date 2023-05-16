@@ -11,13 +11,4 @@ spec:
     path: overlays/my-awesome-app-2/dev
     repoURL: https://github.com/mbursac32/argo-apps.git
     targetRevision: HEAD
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-      allowEmpty: false
-    syncOptions:     # Sync options which modifies sync behavior
-    - CreateNamespace=true
-    - PrunePropagationPolicy=foreground
-    - PruneLast=true  
 
