@@ -4,7 +4,7 @@ metadata:
   name: my-awesome-app-2
 spec:
   destination:
-    namespace: default
+    namespace: argocd
     name: in-cluster
   project: default
   source:
