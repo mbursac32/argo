@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: default
     name: in-cluster
-  project: marko-example
+  project: default
   source:
     path: overlays/app-of-apps
     repoURL: https://github.com/mbursac32/argo.git
