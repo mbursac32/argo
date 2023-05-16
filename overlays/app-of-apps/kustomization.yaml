@@ -6,4 +6,5 @@ bases:
 
 resources:
   - my-awesome-app-1.yaml
+  - my-awesome-app-2.yaml
 
