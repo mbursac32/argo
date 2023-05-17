@@ -37,7 +37,9 @@ spec:
       repoURL: git@bitbucket.org:microblink/net-apps.git
       revision: master
       directories:
-      - path: overlays/my-awesome-app-*/dev
+      - path: overlays/my-awesome-app-1/dev
+      - path: overlays/my-awesome-app-2/dev
+      - path: overlays/my-awesome-app-3/dev
   template:
     metadata:
       name: '{{path.basename}}'
