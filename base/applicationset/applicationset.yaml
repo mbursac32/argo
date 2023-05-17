@@ -8,11 +8,11 @@ spec:
   - list:
       elements:
       - path: overlays/my-awesome-app-1/dev
-        name: my-awesome-app-1
+        name: app-set-my-awesome-app-1
       - path: overlays/my-awesome-app-2/dev
-        name: my-awesome-app-2
+        name: app-set-my-awesome-app-2
       - path: overlays/my-awesome-app-3/dev
-        name: my-awesome-app-3
+        name: app-set-my-awesome-app-3
   template:
     metadata:
       name: '{{name}}'
