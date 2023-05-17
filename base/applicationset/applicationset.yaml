@@ -7,12 +7,12 @@ spec:
   generators:
   - list:
       elements:
-        - path: overlays/my-awesome-app-1/dev
-          name: my-awesome-app-1
-        - path: overlays/my-awesome-app-2/dev
-          name: my-awesome-app-2
-        - path: overlays/my-awesome-app-3/dev
-          name: my-awesome-app-3
+      - path: overlays/my-awesome-app-1/dev
+        name: my-awesome-app-1
+      - path: overlays/my-awesome-app-2/dev
+        name: my-awesome-app-2
+      - path: overlays/my-awesome-app-3/dev
+        name: my-awesome-app-3
     metadata:
       name: '{{name}}'
     spec:
