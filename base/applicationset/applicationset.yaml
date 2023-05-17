@@ -1,21 +1,46 @@
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: ApplicationSet
+#metadata:
+#  name: vh-appset-list-generator
+#spec:
+#  generators:
+#  - list:
+#      elements:
+#      - path: overlays/my-awesome-app-1/dev
+#        name: app-set-my-awesome-app-1
+#      - path: overlays/my-awesome-app-2/dev
+#        name: app-set-my-awesome-app-2
+#      - path: overlays/my-awesome-app-3/dev
+#        name: app-set-my-awesome-app-3
+#  template:
+#    metadata:
+#      name: '{{name}}'
+#    spec:
+#      project: default
+#      source:
+#        repoURL: https://github.com/mbursac32/argo.git
+#        targetRevision: master
+#        path: '{{path}}'
+#      destination:
+#        namespace: argocd
+#        name: in-cluster
+
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: vh-appset
+  name: vh-appset-git-generator
 spec:
   generators:
-  - list:
-      elements:
-      - path: overlays/my-awesome-app-1/dev
-        name: app-set-my-awesome-app-1
-      - path: overlays/my-awesome-app-2/dev
-        name: app-set-my-awesome-app-2
-      - path: overlays/my-awesome-app-3/dev
-        name: app-set-my-awesome-app-3
+  - git:
+      repoURL: git@bitbucket.org:microblink/net-apps.git
+      revision: master
+      directories:
+      - path: overlays/my-awesome-app-*/dev
   template:
     metadata:
-      name: '{{name}}'
+      name: '{{path.basename}}'
     spec:
       project: default
       source:
@@ -25,4 +50,3 @@ spec:
       destination:
         namespace: argocd
         name: in-cluster
-
