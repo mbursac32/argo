@@ -5,6 +5,5 @@ bases:
   - ../../base/app-of-apps
 
 resources:
-  - my-awesome-app-1.yaml
-  - my-awesome-app-2.yaml
+  - applications.yaml
 
