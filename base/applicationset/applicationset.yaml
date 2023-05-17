@@ -5,20 +5,20 @@ metadata:
   name: vh-appset
 spec:
   generators:
-  - git:
-      repoURL: https://github.com/mbursac32/argo.git
-      revision: HEAD
-      directories:
-        - path: overlays/my-awesome-app-*/dev
-      #  - path: overlays/my-awesome-app-2/dev
-      #  - path: overlays/my-awesome-app-3/dev
-  template:
+  - list:
+      elements:
+        - path: overlays/my-awesome-app-1/dev
+          name: my-awesome-app-1
+        - path: overlays/my-awesome-app-2/dev
+          name: my-awesome-app-2
+        - path: overlays/my-awesome-app-3/dev
+          name: my-awesome-app-3
     metadata:
-      name: '{{path[0]}}'
+      name: '{{name}}'
     spec:
       project: default
       source:
-        repoURL: git@bitbucket.org:microblink/net-apps.git
+        repoURL: https://github.com/mbursac32/argo.git
         targetRevision: master
         path: '{{path}}'
       destination:
