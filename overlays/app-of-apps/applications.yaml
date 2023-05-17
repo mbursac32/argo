@@ -41,3 +41,18 @@ spec:
     path: overlays/my-awesome-app-3/dev
     repoURL: https://github.com/mbursac32/argo-apps.git
     targetRevision: HEAD
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-awesome-app-4
+spec:
+  destination:
+    namespace: argocd
+    name: in-cluster
+  project: default
+  source:
+    path: overlays/my-awesome-app-4/dev
+    repoURL: https://github.com/mbursac32/argo-apps.git
+    targetRevision: HEAD
