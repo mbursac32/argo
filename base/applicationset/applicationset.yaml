@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: vh-appset
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/mbursac32/argo.git
+      revision: HEAD
+      directories:
+        - path: overlays/my-awesome-app-*/dev
+      #  - path: overlays/my-awesome-app-2/dev
+      #  - path: overlays/my-awesome-app-3/dev
+  template:
+    metadata:
+      name: '{{path[0]}}'
+    spec:
+      project: default
+      source:
+        repoURL: git@bitbucket.org:microblink/net-apps.git
+        targetRevision: master
+        path: '{{path}}'
+      destination:
+        namespace: argocd
+        name: in-cluster
+
