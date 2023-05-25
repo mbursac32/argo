@@ -51,6 +51,10 @@ spec:
   destination:
     namespace: argocd
     name: in-cluster
+  ignoreDifferences:
+    - kind: Secret
+      jsonPointers:
+      - /data
   syncPolicy:
     syncOptions:
     - RespectIgnoreDifferences=true
@@ -59,9 +63,4 @@ spec:
     path: overlays/my-awesome-app-4/dev
     repoURL: https://github.com/mbursac32/argo-apps.git
     targetRevision: HEAD
-    ignoreDifferences:
-    - kind: Secret
-      jsonPointers:
-      - /data
-      - /annotations
-      - /labels
+    
