@@ -63,3 +63,5 @@ spec:
     - kind: Secret
       jsonPointers:
       - /data
+      - /annotations
+      - /labels
