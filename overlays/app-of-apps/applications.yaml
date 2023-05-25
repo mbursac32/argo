@@ -51,6 +51,9 @@ spec:
   destination:
     namespace: argocd
     name: in-cluster
+  syncPolicy:
+    syncOptions:
+    - RespectIgnoreDifferences=true
   project: default
   source:
     path: overlays/my-awesome-app-4/dev
