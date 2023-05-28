@@ -82,6 +82,6 @@ spec:
     - RespectIgnoreDifferences=true
   project: default
   source:
-    path: overlays/mongo/dev
+    path: overlays/mongodb/dev
     repoURL: https://github.com/mbursac32/argo-apps.git
     targetRevision: HEAD
